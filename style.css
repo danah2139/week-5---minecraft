@@ -4,9 +4,13 @@
 
 * {
 	box-sizing: border-box;
+}
+body {
 	padding: 0;
 	margin: 0;
 	font-family: 'Noto Sans';
+	color: white;
+	text-align: center;
 }
 .container {
 	display: flex;
@@ -39,6 +43,20 @@
 	height: 100%;
 	width: 80%;
 	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.world {
+	height: 100%;
+	display: flex;
+	/* flex-direction: column; */
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
 }
 
 .landing {
@@ -51,18 +69,6 @@
 	flex-direction: column;
 }
 
-.axe {
-	background: url('./img/axe.jpg') center center / cover;
-}
-
-.pickaxe {
-	background: url('./img/pickaxe.jpg') center center / cover;
-}
-
-.shovel {
-	background: url('./img/shovel.jpg') center center / cover;
-}
-
 .sky {
 	background-color: azure;
 }
@@ -72,25 +78,25 @@
 }
 
 .grass {
-	background: url('./img/grass_top.png') center center no-repeat/cover;
+	background: url('./img/grass_top.png') center center / cover;
 }
 
 .leaf {
-	background: url('./img/leaf.png') center center no-repeat/cover;
+	background: url('./img/leaf.png') center center / cover;
 }
 
 .rock {
-	background: url('./img/rock.png') center center no-repeat/cover;
+	background: url('./img/rock.png') center center / cover;
 }
 .trunk {
-	background: url('./img/trunk.jpg') center center no-repeat/cover;
+	background: url('./img/trunk.jpg') center center / cover;
 }
 .dirt {
-	background: url('./img/dirt.jpg') center center no-repeat/cover;
+	background: url('./img/dirt.jpg') center center / cover;
 }
 
 .hidden {
-	visibility: hidden;
+	display: none;
 }
 /* 
 .visible {
@@ -102,12 +108,47 @@
 	font-size: 22px;
 }
 
-.tool {
-	height: 140px;
-	object-fit: none;
-	/* background-position: center; */
-	width: 40%;
+/* .tool-box {
+	display: flex;
+	flex-direction: column;
+} */
+
+[data-type='tool'] {
 	border: 5px var(--green-color) solid;
+	font-size: 1.4rem;
+	margin: 5px 0;
+	height: 15vh;
+	width: 30%;
+	background: center / 65% no-repeat;
+	padding: 0.2rem;
+	cursor: pointer;
+	transition: all 0.1s ease-in;
+}
+
+.tool-overview {
+	background: center / 80% no-repeat;
+	height: 10vh;
+	width: 5vw;
+}
+[data-type='pixel'] {
+	height: 50px;
+	width: 50px;
+}
+
+[data-type='pixel']:hover {
+	border: 2px solid white;
+}
+
+.axe {
+	background-image: url('./img/axe.png');
+}
+
+.pickaxe {
+	background-image: url('./img/pickaxe.png');
+}
+
+.shovel {
+	background-image: url('./img/shovel.png');
 }
 
 .stack {
@@ -117,29 +158,21 @@
 	margin-bottom: 20px;
 }
 
-.tool-overview,
-.pixel {
-	height: 50px;
-	width: 50px;
-	border: 2px solid;
-}
-
 .overview {
 	padding: 10px 20px;
 	width: 80%;
-	background-color: black;
-	opacity: 0.6;
+	background-color: rgba(0, 0, 0, 0.6);
 	display: flex;
 	flex-direction: column;
 	color: white;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 200px;
+	/* margin-bottom: 200px; */
 }
 
 .card {
 	display: flex;
-	padding: 20px 30px;
+	/* padding: 20px 30px; */
 	justify-content: center;
 	align-items: center;
 }
@@ -155,8 +188,30 @@
 	border-radius: 5px;
 	border: 3px solid white;
 	color: white;
+	position: absolute;
+	top: 500px;
 }
 .start:hover,
 .reset:hover {
 	background-color: rgba(56, 161, 96, 0.4);
+}
+
+.change-color_alert {
+	position: relative;
+	animation: alert 1s linear 5s alternate;
+}
+.pick-tool {
+	background-color: var(--green-color);
+}
+
+@keyframes alert {
+	0% {
+		background-color: red;
+	}
+	50% {
+		background-color: blue;
+	}
+	100% {
+		background-color: red;
+	}
 }
