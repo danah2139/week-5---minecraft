@@ -100,9 +100,10 @@ const gameSteps = () => {
 			currentMetarial = '';
 			return;
 		}
-		if (currentTool === '') {
+		if (currentTool == '') {
 			return;
 		}
+		console.log(currentTool);
 
 		let metrial = e.target.getAttribute('class');
 		let tool = document.querySelector(`.sidebar .${currentTool}`);
@@ -118,7 +119,6 @@ const gameSteps = () => {
 			setTimeout(() => {
 				tool.classList.remove('change-color_alert');
 			}, 6000);
-			tool.classList.remove('pick-tool');
 
 			return;
 		}
