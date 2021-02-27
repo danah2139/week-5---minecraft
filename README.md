@@ -21,7 +21,7 @@
   1. Axe - for cutting trees
   2. Pickaxe - for mining rocks
   3. Shovel - for digging dirt
-     -reset button
+- reset button
 
 ## 3. start game
 
