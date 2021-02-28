@@ -9,33 +9,35 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="main-content">
-				<div class="landing">
-					<div class="overview">
-						<h2>Instructions</h2>
-						<div class="card">
-							<div class="axe tool-overview"></div>
-							<p>cutting trees</p>
-						</div>
-						<div class="card">
-							<div class="pickaxe tool-overview"></div>
-							<p>mining rocks</p>
-						</div>
-						<div class="card">
-							<div class="shovel tool-overview"></div>
-							<p>digging dirt</p>
-						</div>
+			<div class="landing">
+				<div class="overview">
+					<h2>Instructions</h2>
+					<div class="card">
+						<div class="axe tool-overview"></div>
+						<p>cutting trees</p>
 					</div>
-					<button class="btn start">START</button>
+					<div class="card">
+						<div class="pickaxe tool-overview"></div>
+						<p>mining rocks</p>
+					</div>
+					<div class="card">
+						<div class="shovel tool-overview"></div>
+						<p>digging dirt</p>
+					</div>
 				</div>
-				<div class="world hidden"></div>
+				<button class="btn start">START</button>
 			</div>
-			<div class="sidebar">
-				<div class="axe" data-type="tool">Axe</div>
-				<div class="pickaxe" data-type="tool">Pickaxe</div>
-				<div class="shovel" data-type="tool">Shovel</div>
-				<div class="stack"></div>
-				<button class="btn reset">Reset</button>
+			<div class="main-content hidden">
+				<div class="world"></div>
+				<div class="sidebar">
+					<div class="toolbar">
+						<div class="axe" data-type="tool">Axe</div>
+						<div class="pickaxe" data-type="tool">Pickaxe</div>
+						<div class="shovel" data-type="tool">Shovel</div>
+					</div>
+					<div class="stack"></div>
+					<button class="btn reset">Reset</button>
+				</div>
 			</div>
 		</div>
 		<script src="./index.js"></script>

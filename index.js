@@ -1,9 +1,11 @@
 const startBtn = document.querySelector('.start');
 const resetBtn = document.querySelector('.reset');
 const landing = document.querySelector('.landing');
+const mainContent = document.querySelector('.main-content');
 const world = document.querySelector('.world');
+const sidebar = document.querySelector('.sidebar');
 let stack = document.querySelector('.stack');
-let tools = document.querySelectorAll('[data-type="tool"]');
+let tools = document.querySelector('.toolbar');
 let currentTool = '';
 let currentMetarial = '';
 let pixel;
@@ -75,7 +77,8 @@ const initializeWorld = () => {
 const gameSteps = () => {
 	startBtn.addEventListener('click', () => {
 		landing.classList.add('hidden');
-		world.classList.remove('hidden');
+		mainContent.classList.remove('hidden');
+
 		initializeWorld();
 	});
 
@@ -83,12 +86,13 @@ const gameSteps = () => {
 		window.location.reload();
 	});
 
-	tools.forEach((tool) => {
-		tool.addEventListener('click', (e) => {
-			currentTool = e.target.getAttribute('class');
-			e.target.classList.add('pick-tool');
-			console.log(e.target);
-		});
+	tools.addEventListener('click', (e) => {
+		if (currentTool != '') {
+			return;
+		}
+		currentTool = e.target.getAttribute('class');
+		e.target.classList.add('pick-tool');
+		console.log(e.target);
 	});
 
 	const changePixelMetirial = (e) => {
@@ -127,6 +131,7 @@ const gameSteps = () => {
 			e.target.classList.remove(currentMetarial);
 			e.target.classList.add('sky');
 			tool.classList.remove('pick-tool');
+			currentTool = '';
 		}
 	};
 	world.addEventListener('click', changePixelMetirial);
