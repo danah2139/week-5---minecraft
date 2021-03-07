@@ -208,7 +208,7 @@ body {
 
 .change-color_alert {
 	position: relative;
-	animation: alert 1s linear 5s alternate;
+	animation: alert 1s linear;
 }
 .pick-tool {
 	background-color: var(--green-color);
